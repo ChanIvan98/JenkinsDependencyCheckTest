@@ -7,11 +7,11 @@ pipeline {
 			}
 		}
 
-		stage('OWASP DependencyCheck') {
-			steps {
-				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'Default'
-			}
-		}
+		stage('OWASP Dependency Check') {
+            steps {
+                dependencyCheck additionalArguments: '--format HTML --format XML --disableYarnAudit', odcInstallation: 'dependency-check'
+            }
+        }
 	}	
 	post {
 		success {

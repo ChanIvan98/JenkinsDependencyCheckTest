@@ -9,7 +9,7 @@ pipeline {
 
 		stage('OWASP Dependency Check') {
             steps {
-                dependencyCheck additionalArguments: '--format HTML --format XML --disableYarnAudit', odcInstallation: 'dependency-check'
+                dependencyCheck additionalArguments: '--format HTML --format XML --disableYarnAudit', odcInstallation: 'default'
             }
         }
 	}	
